@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   ActivityIndicator,
+  Image,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -351,7 +352,12 @@ function ModeTab({ label, active, onPress }: { label: string; active: boolean; o
 }
 
 function BrandMark({ size = "small" }: { size?: "small" | "large" }) {
-  return <View style={size === "large" ? styles.brandMarkLarge : styles.brandMark}><Text style={styles.brandMarkText}>H</Text></View>;
+  return (
+    <Image 
+      source={require('./assets/fitsphere-icon.png')} 
+      style={size === "large" ? styles.brandMarkLarge : styles.brandMark}
+    />
+  );
 }
 
 function Brand() {
@@ -359,7 +365,7 @@ function Brand() {
     <View style={styles.brandRow}>
       <BrandMark />
       <View>
-        <Text style={styles.brandName}>HIPERTROFIA</Text>
+        <Text style={styles.brandName}>FIT SPHERE</Text>
         <Text style={styles.brandSub}>FITNESS & NUTRIÇÃO</Text>
       </View>
     </View>
@@ -373,9 +379,8 @@ const styles = StyleSheet.create({
   scrollContent: { flexGrow: 1, paddingHorizontal: 24, paddingTop: 14, paddingBottom: 28 },
   topLine: { flexDirection: "row", justifyContent: "space-between", alignItems: "center" },
   brandRow: { flexDirection: "row", alignItems: "center", gap: 10 },
-  brandMark: { width: 38, height: 38, borderRadius: 12, backgroundColor: C.green, alignItems: "center", justifyContent: "center" },
-  brandMarkLarge: { width: 48, height: 48, borderRadius: 15, backgroundColor: C.green, alignItems: "center", justifyContent: "center" },
-  brandMarkText: { fontSize: 24, lineHeight: 27, fontWeight: "900", color: C.background, fontStyle: "italic" },
+  brandMark: { width: 38, height: 38, borderRadius: 12, borderColor: 'lime', borderWidth: 1.5, overflow: 'hidden' },
+  brandMarkLarge: { width: 48, height: 48, borderRadius: 15, borderColor: 'lime', borderWidth: 1.5, overflow: 'hidden' },
   brandName: { color: C.text, letterSpacing: 1.3, fontWeight: "900", fontSize: 12 },
   brandSub: { color: C.muted, letterSpacing: 1.25, fontSize: 8, marginTop: 3 },
   topBadge: { flexDirection: "row", alignItems: "center", gap: 7, paddingVertical: 8, paddingHorizontal: 9, borderRadius: 20, borderWidth: 1, borderColor: C.border, flexShrink: 1, maxWidth: 158 },
