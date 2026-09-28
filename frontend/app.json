@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Hipertrofia",
-    "slug": "hipertrofia-app",
+    "name": "Fit Sphere",
+    "slug": "fit-sphere",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
