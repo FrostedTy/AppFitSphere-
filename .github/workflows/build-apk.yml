@@ -26,4 +26,5 @@ jobs:
       - name: Iniciar Build do APK na Nuvem
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          EXPO_PUBLIC_API_URL: "https://api-fitsphere.onrender.com"
         run: cd frontend && eas build --platform android --profile preview --non-interactive
