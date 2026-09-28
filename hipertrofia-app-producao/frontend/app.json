@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "Hipertrofia",
+    "slug": "hipertrofia-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "hipertrofia",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hipertrofia.app"
+    },
+    "android": {
+      "package": "com.gabriel.hipertrofiaapp",
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#0B100E",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-notifications",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Permita que o Hipertrofia selecione uma foto da sua refeição para estimar os macronutrientes.",
+          "cameraPermission": "Permita que o Hipertrofia fotografe sua refeição para estimar os macronutrientes.",
+          "microphonePermission": false
+        }
+      ]
+    ]
+  }
+}
