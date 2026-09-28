@@ -20,6 +20,9 @@ jobs:
       - name: Instalar dependencias globais do Expo/EAS
         run: npm install -g eas-cli
 
+      - name: Instalar dependencias do projeto
+        run: cd frontend && npm install
+
       - name: Iniciar Build do APK na Nuvem
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
