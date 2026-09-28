@@ -1,4 +1,3 @@
-YAML
 name: Gerar APK Android
 
 on:
@@ -9,19 +8,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Descarregar código do repositório
+      - name: Descarregar codigo do repositorio
         uses: actions/checkout@v3
 
-      - name: ⠦ Configurar Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: 📦 Instalar dependências globais do Expo/EAS
+      - name: Instalar dependencias globais do Expo/EAS
         run: npm install -g eas-cli
 
-      - name: 🔑 Autenticar no Expo
+      - name: Autenticar no Expo
         run: eas login --token ${{ secrets.EXPO_TOKEN }}
 
-      - name: 🚀 Iniciar Build do APK na Nuvem
+      - name: Iniciar Build do APK na Nuvem
         run: cd frontend && eas build --platform android --profile preview --non-interactive
