@@ -1,0 +1,32 @@
+# SOMENTE para demonstração/QA: Render Free não é recomendado para produção.
+# O plano Free não oferece pre-deploy; por isso este Blueprint aplica migrações durante o build.
+services:
+  - type: web
+    name: hipertrofia-api-demo
+    runtime: node
+    plan: free
+    region: ohio
+    rootDir: backend
+    buildCommand: npm ci && npm run prisma:generate && npm run prisma:deploy
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NUTRITION_AI_MODE
+        value: gemini
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
+      - key: JWT_ACCESS_TOKEN_TTL
+        value: 15m
+      - key: CORS_ORIGIN
+        value: ""
+      - key: DATABASE_URL
+        sync: false
+      - key: DIRECT_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
