@@ -1,26 +1,25 @@
 {
   "expo": {
     "name": "Fit Sphere",
-    "slug": "hipertrofia-app",
+    "slug": "fit-sphere",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
-    "scheme": "hipertrofia",
+    "scheme": "fitsphere",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.hipertrofia.app"
+      "bundleIdentifier": "com.fitsphere.app"
     },
     "android": {
-      "package": "com.gabriel.hipertrofiaapp",
+      "package": "com.gabriel.fitsphereapp",
       "permissions": [
         "android.permission.CAMERA"
       ],
       "adaptiveIcon": {
         "backgroundColor": "#0B100E",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundImage": "./assets/icon.png"
       }
     },
     "web": {
@@ -33,8 +32,8 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Permita que o Hipertrofia selecione uma foto da sua refeição para estimar os macronutrientes.",
-          "cameraPermission": "Permita que o Hipertrofia fotografe sua refeição para estimar os macronutrientes.",
+          "photosPermission": "Permita que o Fit Sphere selecione uma foto da sua refeição para estimar os macronutrientes.",
+          "cameraPermission": "Permita que o Fit Sphere fotografe sua refeição para estimar os macronutrientes.",
           "microphonePermission": false
         }
       ]
