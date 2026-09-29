@@ -4,10 +4,11 @@ const developmentFallback = Platform.OS === "android"
   ? "http://10.0.2.2:3333"
   : "http://localhost:3333";
 
-// A URL local só pode ser usada em desenvolvimento. Em builds standalone, ausência de
-// configuração deve falhar com mensagem clara em vez de apontar para localhost.
+// Rede de segurança: garante que nunca falha, mesmo se a variável do EAS não for injetada
+const fallbackProductionUrl = "https://api-fitsphere.onrender.com";
+
 const configuredApiUrl = process.env.EXPO_PUBLIC_API_URL?.trim();
-export const API_BASE_URL = (configuredApiUrl || (__DEV__ ? developmentFallback : "")).replace(/\/+$/, "");
+export const API_BASE_URL = (configuredApiUrl || (__DEV__ ? developmentFallback : fallbackProductionUrl)).replace(/\/+$/, "");
 
 type ApiOptions = {
   method?: "GET" | "POST" | "PATCH" | "DELETE";
