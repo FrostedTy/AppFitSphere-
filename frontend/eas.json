@@ -9,14 +9,16 @@
       "distribution": "internal",
       "environment": "development",
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "credentialsSource": "remote"
       }
     },
     "preview": {
       "distribution": "internal",
       "environment": "preview",
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "credentialsSource": "remote"
       },
       "env": {
         "EXPO_PUBLIC_API_URL": "https://api-fitsphere.onrender.com"
@@ -29,7 +31,8 @@
         "EXPO_PUBLIC_API_URL": "https://api-fitsphere.onrender.com"
       },
       "android": {
-        "buildType": "app-bundle"
+        "buildType": "app-bundle",
+        "credentialsSource": "remote"
       }
     }
   }
